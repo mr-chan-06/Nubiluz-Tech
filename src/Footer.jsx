@@ -32,11 +32,11 @@ export default function Footer() {
             <img src={logo} alt="Nubiluz Tech" className="footer-logo" />
             <p>Empowering businesses through innovative software and data-driven digital strategies.</p>
             <div className="footer-social">
-              <a href="#" className="social-icon"><Facebook size={20} /></a>
-              <a href="#" className="social-icon"><Twitter size={20} /></a>
-              <a href="#" className="social-icon"><Instagram size={20} /></a>
-              <a href="#" className="social-icon"><Linkedin size={20} /></a>
-              <a href="#" className="social-icon"><Github size={20} /></a>
+              <a href="#home" className="social-icon"><Facebook size={20} /></a>
+              <a href="#home" className="social-icon"><Twitter size={20} /></a>
+              <a href="#home" className="social-icon"><Instagram size={20} /></a>
+              <a href="#home" className="social-icon"><Linkedin size={20} /></a>
+              <a href="#home" className="social-icon"><Github size={20} /></a>
             </div>
           </div>
           
@@ -53,19 +53,19 @@ export default function Footer() {
           <div className="footer-links">
             <h3>Services</h3>
             <ul>
-              <li><a href="#">Web Development</a></li>
-              <li><a href="#">Custom Software</a></li>
-              <li><a href="#">Cloud Solutions</a></li>
-              <li><a href="#">Digital Marketing</a></li>
+              <li><a href="#home">Web Development</a></li>
+              <li><a href="#home">Custom Software</a></li>
+              <li><a href="#home">Cloud Solutions</a></li>
+              <li><a href="#home">Digital Marketing</a></li>
             </ul>
           </div>
           
           <div className="footer-links">
             <h3>Legal</h3>
             <ul>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-              <li><a href="#">Cookie Policy</a></li>
+              <li><a href="#home">Privacy Policy</a></li>
+              <li><a href="#home">Terms of Service</a></li>
+              <li><a href="#home">Cookie Policy</a></li>
             </ul>
           </div>
         </div>
