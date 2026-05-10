@@ -5,8 +5,21 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react';
 export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
+    const formData = new FormData(e.target);
+    const newMessage = {
+      id: Date.now().toString(),
+      name: `${formData.get('first-name')} ${formData.get('last-name')}`,
+      email: formData.get('email'),
+      phone: formData.get('phone') || 'N/A', // Added phone field check
+      requirement: formData.get('message'),
+      date: new Date().toISOString()
+    };
+
+    const existingMessages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
+    localStorage.setItem('contactMessages', JSON.stringify([newMessage, ...existingMessages]));
+    
     alert("Message sent successfully!");
+    e.target.reset();
   };
 
   return (
@@ -56,19 +69,23 @@ export default function Contact() {
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="first-name">First Name</label>
-                <input type="text" id="first-name" placeholder="John" required />
+                <input type="text" id="first-name" name="first-name" placeholder="John" required />
               </div>
               <div className="form-group">
                 <label htmlFor="last-name">Last Name</label>
-                <input type="text" id="last-name" placeholder="Doe" required />
+                <input type="text" id="last-name" name="last-name" placeholder="Doe" required />
               </div>
               <div className="form-group full-width">
                 <label htmlFor="email">Email Address</label>
-                <input type="email" id="email" placeholder="john@example.com" required />
+                <input type="email" id="email" name="email" placeholder="john@example.com" required />
+              </div>
+              <div className="form-group full-width">
+                <label htmlFor="phone">Phone Number (Optional)</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" />
               </div>
               <div className="form-group full-width">
                 <label htmlFor="message">Your Message</label>
-                <textarea id="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
               </div>
               <div className="form-group full-width">
                 <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
