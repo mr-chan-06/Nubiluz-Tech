@@ -5,18 +5,48 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  background-color: var(--bg-main);
+  background: radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
 }
 
-.hero::before {
-  content: '';
+.hero-bg-decor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pixel-grid {
   position: absolute;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 80% 20%, var(--accent-glow) 0%, transparent 40%);
-  pointer-events: none;
+  background-image: radial-gradient(var(--primary) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.1;
+  mask-image: linear-gradient(to left, rgba(0,0,0,1), transparent);
+}
+
+.glow-sphere {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 400px;
+  height: 400px;
+  background: var(--primary);
+  filter: blur(120px);
+  opacity: 0.08;
+  border-radius: 50%;
+  animation: pulse-glow 10s infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from { transform: scale(1); opacity: 0.05; }
+  to { transform: scale(1.2); opacity: 0.1; }
 }
 
 .hero-content {
@@ -88,10 +118,13 @@
 
 .floating-card {
   position: absolute;
-  background: white;
-  padding: 1.5rem;
-  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1.25rem;
+  border-radius: 20px;
   box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   display: flex;
   align-items: center;
   gap: 1rem;

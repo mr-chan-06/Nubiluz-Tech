@@ -6,7 +6,13 @@ import heroImage from './assets/hero-bg.png';
 export default function Hero() {
   return (
     <section id="home" className="hero">
-      <div className="container" style={{ display: 'flex', alignItems: 'center', width: '100%', gap: '4rem' }}>
+      {/* Background Decor */}
+      <div className="hero-bg-decor">
+        <div className="pixel-grid"></div>
+        <div className="glow-sphere"></div>
+      </div>
+
+      <div className="container" style={{ display: 'flex', alignItems: 'center', width: '100%', gap: '4rem', position: 'relative', zIndex: 10 }}>
         <div className="hero-content animate-fade-in-up">
           <div className="hero-badge">
             <Sparkles size={16} style={{ marginRight: '8px' }} />
