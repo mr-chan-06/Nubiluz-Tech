@@ -1,6 +1,6 @@
 import React from 'react';
 import './Services.css';
-import { Code, Globe, Database, Smartphone, Shield, BarChart } from 'lucide-react';
+import { Code, Globe, Database, Smartphone, Shield, BarChart, ArrowRight } from 'lucide-react';
 
 const services = [
   {
@@ -55,6 +55,10 @@ export default function Services() {
               </div>
               <h3 className="service-title">{service.title}</h3>
               <p className="service-description">{service.description}</p>
+              <div className="service-link">
+                <span>Learn More</span>
+                <ArrowRight size={16} className="link-arrow" />
+              </div>
             </div>
           ))}
         </div>
