@@ -48,16 +48,6 @@ export default function Hero() {
                 <p style={{ color: '#64748b', fontSize: '0.75rem' }}>Client Satisfaction</p>
               </div>
             </div>
-
-            <div className="floating-card card-2">
-              <div style={{ background: '#dbeafe', padding: '8px', borderRadius: '50%' }}>
-                <Sparkles size={24} color="#2563eb" />
-              </div>
-              <div>
-                <p style={{ fontWeight: 700, fontSize: '0.875rem' }}>Expert Team</p>
-                <p style={{ color: '#64748b', fontSize: '0.75rem' }}>10+ Years Exp.</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

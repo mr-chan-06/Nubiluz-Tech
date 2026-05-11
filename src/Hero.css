@@ -133,7 +133,7 @@
 }
 
 .card-1 { top: 10%; right: -5%; animation-delay: 0s; }
-.card-2 { bottom: 15%; left: -5%; animation-delay: 2s; }
+
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }

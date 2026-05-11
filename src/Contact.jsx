@@ -3,23 +3,36 @@ import './Contact.css';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
 export default function Contact() {
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const newMessage = {
-      id: Date.now().toString(),
-      name: `${formData.get('first-name')} ${formData.get('last-name')}`,
+      name: formData.get('full-name'),
       email: formData.get('email'),
-      phone: formData.get('phone') || 'N/A', // Added phone field check
+      phone: formData.get('phone') || 'N/A',
       requirement: formData.get('message'),
       date: new Date().toISOString()
     };
 
-    const existingMessages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
-    localStorage.setItem('contactMessages', JSON.stringify([newMessage, ...existingMessages]));
-    
-    alert("Message sent successfully!");
-    e.target.reset();
+    try {
+      const response = await fetch('/api/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newMessage),
+      });
+
+      if (response.ok) {
+        alert("Message sent successfully!");
+        e.target.reset();
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert("Failed to send message. Please try again later.");
+    }
   };
 
   return (
@@ -35,31 +48,21 @@ export default function Contact() {
             <div className="contact-details">
               <div className="contact-item">
                 <div className="contact-icon-box">
-                  <Mail size={24} />
+                  <Mail size={20} />
                 </div>
                 <div>
-                  <p style={{ fontWeight: 600 }}>Email Us</p>
-                  <p style={{ opacity: 0.8 }}>hello@nubiluz.tech</p>
+                  <p style={{ fontWeight: 600, fontSize: '0.9rem' }}>Email Us</p>
+                  <p style={{ opacity: 0.8, fontSize: '0.85rem' }}>hello@nubiluz.tech</p>
                 </div>
               </div>
               
               <div className="contact-item">
                 <div className="contact-icon-box">
-                  <Phone size={24} />
+                  <Phone size={20} />
                 </div>
                 <div>
-                  <p style={{ fontWeight: 600 }}>Call Us</p>
-                  <p style={{ opacity: 0.8 }}>+1 (555) 000-0000</p>
-                </div>
-              </div>
-              
-              <div className="contact-item">
-                <div className="contact-icon-box">
-                  <MapPin size={24} />
-                </div>
-                <div>
-                  <p style={{ fontWeight: 600 }}>Location</p>
-                  <p style={{ opacity: 0.8 }}>Silicon Valley, CA</p>
+                  <p style={{ fontWeight: 600, fontSize: '0.9rem' }}>Call Us</p>
+                  <p style={{ opacity: 0.8, fontSize: '0.85rem' }}>+1 (555) 000-0000</p>
                 </div>
               </div>
             </div>
@@ -67,29 +70,25 @@ export default function Contact() {
           
           <div className="contact-form-container">
             <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="first-name">First Name</label>
-                <input type="text" id="first-name" name="first-name" placeholder="John" required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="last-name">Last Name</label>
-                <input type="text" id="last-name" name="last-name" placeholder="Doe" required />
-              </div>
               <div className="form-group full-width">
+                <label htmlFor="full-name">Full Name</label>
+                <input type="text" id="full-name" name="full-name" placeholder="John Doe" required />
+              </div>
+              <div className="form-group">
                 <label htmlFor="email">Email Address</label>
                 <input type="email" id="email" name="email" placeholder="john@example.com" required />
               </div>
-              <div className="form-group full-width">
-                <label htmlFor="phone">Phone Number (Optional)</label>
+              <div className="form-group">
+                <label htmlFor="phone">Phone (Optional)</label>
                 <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" />
               </div>
               <div className="form-group full-width">
                 <label htmlFor="message">Your Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+                <textarea id="message" name="message" rows="3" placeholder="Tell us about your project..." required></textarea>
               </div>
               <div className="form-group full-width">
-                <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-                  Send Message <Send size={20} />
+                <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', padding: '0.75rem' }}>
+                  Send Message <Send size={18} />
                 </button>
               </div>
             </form>
