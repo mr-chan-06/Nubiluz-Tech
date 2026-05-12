@@ -14,25 +14,15 @@ export default function Contact() {
       date: new Date().toISOString()
     };
 
-    try {
-      const response = await fetch('/api/messages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newMessage),
-      });
-
-      if (response.ok) {
-        alert("Message sent successfully!");
-        e.target.reset();
-      } else {
-        throw new Error('Failed to send message');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert("Failed to send message. Please try again later.");
-    }
+    // Direct connection logic (WhatsApp)
+    const adminWhatsApp = "919943202681"; // TODO: Replace with real admin number
+    const messageText = `*New Inquiry from Website*%0A%0A*Name:* ${newMessage.name}%0A*Email:* ${newMessage.email}%0A*Phone:* ${newMessage.phone}%0A*Requirement:* ${newMessage.requirement}`;
+    
+    const whatsappUrl = `https://wa.me/${adminWhatsApp}?text=${messageText}`;
+    
+    window.open(whatsappUrl, '_blank');
+    alert("Redirecting to WhatsApp to connect with our admin directly...");
+    e.target.reset();
   };
 
   return (
