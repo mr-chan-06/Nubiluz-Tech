@@ -1,8 +1,9 @@
 import React from 'react';
 import logo from './assets/logo.png';
 import './Footer.css';
+import { Link } from 'react-router-dom';
 
-// Custom SVG components for brand icons removed from lucide-react
+// Custom SVG components for brand icons
 const Facebook = ({ size = 24 }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
 );
@@ -32,40 +33,41 @@ export default function Footer() {
             <img src={logo} alt="Nubiluz Tech" className="footer-logo" />
             <p>Empowering businesses through innovative software and data-driven digital strategies.</p>
             <div className="footer-social">
-              <a href="#home" className="social-icon"><Facebook size={20} /></a>
-              <a href="#home" className="social-icon"><Twitter size={20} /></a>
-              <a href="#home" className="social-icon"><Instagram size={20} /></a>
-              <a href="#home" className="social-icon"><Linkedin size={20} /></a>
-              <a href="#home" className="social-icon"><Github size={20} /></a>
+              <Link to="/" className="social-icon"><Facebook size={20} /></Link>
+              <Link to="/" className="social-icon"><Twitter size={20} /></Link>
+              <Link to="/" className="social-icon"><Instagram size={20} /></Link>
+              <Link to="/" className="social-icon"><Linkedin size={20} /></Link>
+              <Link to="/" className="social-icon"><Github size={20} /></Link>
             </div>
           </div>
           
           <div className="footer-links">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/products">Products</Link></li>
+              <li><Link to="/academy">Nubi Academy</Link></li>
+              <li><Link to="/career">Career</Link></li>
+              <li><Link to="/#contact">Contact</Link></li>
             </ul>
           </div>
           
           <div className="footer-links">
             <h3>Services</h3>
             <ul>
-              <li><a href="#home">Web Development</a></li>
-              <li><a href="#home">Custom Software</a></li>
-              <li><a href="#home">Cloud Solutions</a></li>
-              <li><a href="#home">Digital Marketing</a></li>
+              <li><Link to="/products">Web Development</Link></li>
+              <li><Link to="/products">Custom Software</Link></li>
+              <li><Link to="/products">Cloud Solutions</Link></li>
+              <li><Link to="/products">Digital Marketing</Link></li>
             </ul>
           </div>
           
           <div className="footer-links">
             <h3>Legal</h3>
             <ul>
-              <li><a href="#home">Privacy Policy</a></li>
-              <li><a href="#home">Terms of Service</a></li>
-              <li><a href="#home">Cookie Policy</a></li>
+              <li><Link to="/">Privacy Policy</Link></li>
+              <li><Link to="/">Terms of Service</Link></li>
+              <li><Link to="/">Cookie Policy</Link></li>
             </ul>
           </div>
         </div>
