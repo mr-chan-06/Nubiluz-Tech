@@ -2,8 +2,7 @@ import React from 'react';
 import Nav from "./Nav";
 import Hero from "./Hero";
 import Services from "./Services";
-import About from "./About";
-import Contact from "./Contact";
+import MarketingExpertise from "./MarketingExpertise";
 import Footer from "./Footer";
 
 export default function Home() {
@@ -13,8 +12,7 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
-        <About />
-        <Contact />
+        <MarketingExpertise />
       </main>
       <Footer />
     </>

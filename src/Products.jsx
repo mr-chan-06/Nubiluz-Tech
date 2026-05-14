@@ -238,18 +238,6 @@ export default function Products() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="products-cta animate-fade-in-up">
-        <div className="container">
-          <div className="cta-box">
-            <h2>Let’s Build Your Digital Future</h2>
-            <p>Whether you need a powerful software solution, a high-converting marketing strategy, or professional training programs, we are here to help your business succeed in the digital world.</p>
-            <a href="/#contact" className="btn btn-primary btn-large">
-              Get Started Now <ArrowRight size={20} />
-            </a>
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </div>

@@ -45,16 +45,13 @@ export default function Nav() {
                         <Link to="/products" className={`nav-link ${location.pathname === '/products' ? 'active' : ''}`} onClick={() => setIsOpen(false)}>Products</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/#about" className="nav-link" onClick={() => setIsOpen(false)}>Company</Link>
-                    </li>
-                    <li className="nav-item">
                         <Link to="/academy" className={`nav-link ${location.pathname === '/academy' ? 'active' : ''}`} onClick={() => setIsOpen(false)}>Nubi Academy</Link>
                     </li>
                     <li className="nav-item">
                         <Link to="/career" className={`nav-link ${location.pathname === '/career' ? 'active' : ''}`} onClick={() => setIsOpen(false)}>Career</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/#contact" className="nav-link" onClick={() => setIsOpen(false)}>Contact Us</Link>
+                        <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`} onClick={() => setIsOpen(false)}>Contact Us</Link>
                     </li>
                 </ul>
             </div>

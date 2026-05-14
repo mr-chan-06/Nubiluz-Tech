@@ -9,6 +9,7 @@ export default function AdminPanel() {
     const [candidates, setCandidates] = useState([]);
     const [internships, setInternships] = useState([]);
     const [academyLeads, setAcademyLeads] = useState([]);
+    const [inquiries, setInquiries] = useState([]);
     const [showForm, setShowForm] = useState(false);
     const [editingId, setEditingId] = useState(null);
     const [formData, setFormData] = useState({
@@ -36,10 +37,12 @@ export default function AdminPanel() {
         const storedCandidates = JSON.parse(localStorage.getItem('candidates')) || [];
         const storedInternships = JSON.parse(localStorage.getItem('internshipApplications')) || [];
         const storedAcademyLeads = JSON.parse(localStorage.getItem('academyRegistrations')) || [];
+        const storedInquiries = JSON.parse(localStorage.getItem('contactMessages')) || [];
         setCareers(storedCareers);
         setCandidates(storedCandidates);
         setInternships(storedInternships);
         setAcademyLeads(storedAcademyLeads);
+        setInquiries(storedInquiries);
     };
 
     const handleLogin = (e) => {
@@ -224,6 +227,19 @@ export default function AdminPanel() {
         downloadCSV(academyLeads, 'academy-leads');
     };
 
+    const handleDeleteInquiry = (id) => {
+        if (confirm('Are you sure you want to delete this inquiry?')) {
+            const updatedInquiries = inquiries.filter(i => i.id !== id);
+            setInquiries(updatedInquiries);
+            localStorage.setItem('contactMessages', JSON.stringify(updatedInquiries));
+            alert('Inquiry deleted successfully!');
+        }
+    };
+
+    const handleExportInquiries = () => {
+        downloadCSV(inquiries, 'contact-inquiries');
+    };
+
     if (!isAuthenticated) {
         return (
             <div className="admin-login-container">
@@ -288,6 +304,12 @@ export default function AdminPanel() {
                         onClick={() => setActiveTab('academy')}
                     >
                         Academy Leads ({academyLeads.length})
+                    </button>
+                    <button
+                        className={`tab ${activeTab === 'inquiries' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('inquiries')}
+                    >
+                        Contact Inquiries ({inquiries.length})
                     </button>
                 </div>
 
@@ -566,6 +588,56 @@ export default function AdminPanel() {
                                         </div>
                                     </div>
                                 ))}
+                            </div>
+                        )}
+                    </section>
+                )}
+                {activeTab === 'inquiries' && (
+                    <section className="tab-content">
+                        <div className="section-header">
+                            <h2>Contact Inquiries</h2>
+                            {inquiries.length > 0 && (
+                                <button className="export-btn" onClick={handleExportInquiries}>
+                                    📥 Export to Excel
+                                </button>
+                            )}
+                        </div>
+
+                        {inquiries.length === 0 ? (
+                            <p className="empty-state">No inquiries yet.</p>
+                        ) : (
+                            <div className="candidates-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>Requirement</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {inquiries.map(inquiry => (
+                                            <tr key={inquiry.id}>
+                                                <td>{inquiry.date}</td>
+                                                <td>{inquiry.name}</td>
+                                                <td>{inquiry.email}</td>
+                                                <td>{inquiry.phone}</td>
+                                                <td className="message-cell">{inquiry.requirement}</td>
+                                                <td>
+                                                    <button
+                                                        className="delete-btn"
+                                                        onClick={() => handleDeleteInquiry(inquiry.id)}
+                                                    >
+                                                        <Trash2 size={18} />
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
                             </div>
                         )}
                     </section>

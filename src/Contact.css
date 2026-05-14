@@ -1,3 +1,7 @@
+.contact-page {
+  padding-top: 80px;
+}
+
 .contact-section {
   background-color: var(--bg-subtle);
 }
@@ -185,6 +189,7 @@
 @media (max-width: 768px) {
   .contact-info-card {
     padding: 3rem 1.5rem;
+    border-radius: 24px;
   }
   
   .contact-details {
@@ -193,11 +198,14 @@
   }
   
   .modal-content {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.25rem;
+    margin: 1rem;
+    border-radius: 20px;
   }
   
   .contact-form {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
   
   .form-group.full-width {
@@ -207,5 +215,187 @@
   .submit-btn {
     grid-column: span 1;
   }
+
+  .info-header h2 {
+    font-size: 2rem;
+  }
+}
+
+/* New Sections Styling */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.title-underline {
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  margin: 0 auto 2rem;
+  border-radius: 2px;
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.2);
+}
+
+.vision-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.vision-card, .mission-card {
+  background: white;
+  padding: 3.5rem 2.5rem;
+  border-radius: 24px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.vision-card::before, .mission-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+  transform-origin: left;
+}
+
+.vision-card:hover::before, .mission-card:hover::before {
+  transform: scaleX(1);
+}
+
+.vision-card:hover, .mission-card:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+.vision-card h3, .mission-card h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.why-best-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.why-best-item {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 24px;
+  border: 1px solid var(--border-light);
+  transition: all 0.4s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.why-best-item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+}
+
+.why-best-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--bg-subtle);
+  color: var(--primary);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+  transition: all 0.3s ease;
+}
+
+.why-best-item:hover .why-best-icon {
+  background: var(--primary);
+  color: white;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.why-best-item h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.why-best-item p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 992px) {
+  .vision-mission-grid {
+    gap: 1.5rem;
+  }
+  
+  .vision-card, .mission-card {
+    padding: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .vision-mission-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 1.85rem;
+  }
+  
+  .section-header {
+    margin-bottom: 2.5rem;
+    text-align: left;
+  }
+  
+  .title-underline {
+    margin-left: 0;
+  }
+  
+  .why-best-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .why-best-item {
+    padding: 2rem;
+  }
+}
+
+/* Animations */
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 

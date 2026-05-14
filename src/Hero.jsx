@@ -19,11 +19,10 @@ export default function Hero() {
             Next-Gen Digital Solutions
           </div>
           <h1 className="hero-title">
-            Empowering Your Business Through <span className="text-gradient">Innovation</span>
+            Best Web Development Company for <span className="text-gradient">Businesses</span> | Nubiluz Tech
           </h1>
           <p className="hero-subtitle">
-            We deliver cutting-edge software solutions and data-driven digital marketing strategies, 
-            helping startups and enterprises scale seamlessly in the digital age.
+            Nubiluz Tech is the best web development company providing custom websites, software solutions, SEO & digital marketing services for businesses. We help startups and growing brands build a strong online presence, generate leads, and grow faster with modern technology solutions.
           </p>
           <div className="hero-cta">
             <a href="#contact" className="btn btn-primary">

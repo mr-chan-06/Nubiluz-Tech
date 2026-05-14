@@ -43,15 +43,8 @@ export default function Academy() {
     };
     registrations.push(newRegistration);
     localStorage.setItem('academyRegistrations', JSON.stringify(registrations));
-
-    // 2. Send to WhatsApp
-    const adminWhatsApp = "919943202681";
-    const messageText = `*New Academy Registration*%0A%0A*Name:* ${formData.name}%0A*Email:* ${formData.email}%0A*Phone:* ${formData.phone}%0A*Course:* ${formData.course}%0A*Qualification:* ${formData.qualification}%0A*Message:* ${formData.message}`;
     
-    const whatsappUrl = `https://wa.me/${adminWhatsApp}?text=${messageText}`;
-    window.open(whatsappUrl, '_blank');
-
-    alert("Registration submitted! Redirecting to WhatsApp for further discussion.");
+    alert("Application submitted successfully! Our team will review your details and contact you soon.");
     setIsModalOpen(false);
     
     // Reset form
@@ -258,13 +251,18 @@ export default function Academy() {
                      <label>Select Program *</label>
                      <select name="course" value={formData.course} onChange={handleInputChange} required>
                         <option value="">Choose a track</option>
-                        <option value="Full Stack Dev">Full Stack Development</option>
-                        <option value="MERN Stack">MERN Stack Development</option>
-                        <option value="Python">Python Programming</option>
-                        <option value="Java">Java Development</option>
-                        <option value="UI/UX">UI/UX Design</option>
-                        <option value="Digital Marketing">Digital Marketing</option>
-                        <option value="Internship">Internship Program</option>
+                         <option value="Full Stack Dev">Full Stack Development</option>
+                         <option value="MERN Stack">MERN Stack Development</option>
+                         <option value="Python">Python Programming</option>
+                         <option value="Java">Java Development</option>
+                         <option value="UI/UX">UI/UX Design</option>
+                         <option value="Digital Marketing">Digital Marketing</option>
+                         <option value="SEO & SMM">SEO & SMM</option>
+                         <option value="E-commerce Dev">E-commerce Development</option>
+                         <option value="WordPress Dev">WordPress Development</option>
+                         <option value="Graphic Design">Graphic & Logo Design</option>
+                         <option value="B2B Marketing">B2B & SaaS Marketing</option>
+                         <option value="Internship">Internship Program</option>
                      </select>
                   </div>
                </div>

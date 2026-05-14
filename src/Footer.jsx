@@ -48,17 +48,17 @@ export default function Footer() {
               <li><Link to="/products">Products</Link></li>
               <li><Link to="/academy">Nubi Academy</Link></li>
               <li><Link to="/career">Career</Link></li>
-              <li><Link to="/#contact">Contact</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
           
           <div className="footer-links">
             <h3>Services</h3>
             <ul>
-              <li><Link to="/products">Web Development</Link></li>
-              <li><Link to="/products">Custom Software</Link></li>
-              <li><Link to="/products">Cloud Solutions</Link></li>
+              <li><Link to="/products">Software Development</Link></li>
+              <li><Link to="/products">E-commerce Development</Link></li>
               <li><Link to="/products">Digital Marketing</Link></li>
+              <li><Link to="/products">SEO & SMM</Link></li>
             </ul>
           </div>
           

@@ -1,37 +1,76 @@
 import React from 'react';
 import './Services.css';
-import { Code, Globe, Database, Smartphone, Shield, BarChart, ArrowRight } from 'lucide-react';
+import { 
+  Code, 
+  Globe, 
+  Smartphone, 
+  BarChart, 
+  ArrowRight, 
+  ShoppingBag, 
+  Search, 
+  Zap, 
+  Share2, 
+  TrendingUp, 
+  Palette, 
+  Briefcase,
+  Layout
+} from 'lucide-react';
 
 const services = [
-  {
-    icon: <Code size={28} />,
-    title: "Custom Software",
-    description: "Bespoke software solutions tailored to your unique business requirements and goals."
-  },
-  {
-    icon: <Globe size={28} />,
-    title: "Web Development",
-    description: "High-performance, responsive websites and web applications built with modern frameworks."
-  },
-  {
-    icon: <Smartphone size={28} />,
-    title: "Mobile Solutions",
-    description: "Native and cross-platform mobile apps that provide a seamless user experience."
-  },
-  {
-    icon: <Database size={28} />,
-    title: "Data Analytics",
-    description: "Turn your data into actionable insights with our advanced analytics and BI solutions."
-  },
-  {
-    icon: <Shield size={28} />,
-    title: "Cyber Security",
-    description: "Protect your digital assets with our comprehensive security audits and solutions."
-  },
   {
     icon: <BarChart size={28} />,
     title: "Digital Marketing",
     description: "Data-driven marketing strategies to grow your online presence and drive conversions."
+  },
+  {
+    icon: <ShoppingBag size={28} />,
+    title: "E-commerce Development",
+    description: "Building robust, scalable online stores that provide seamless shopping experiences for your customers."
+  },
+  {
+    icon: <Search size={28} />,
+    title: "Search Engine Optimization (SEO)",
+    description: "Boosting your visibility on search engines to drive organic traffic and improve rankings."
+  },
+  {
+    icon: <Zap size={28} />,
+    title: "Branding Services",
+    description: "Creating unique brand identities that resonate with your audience and stand out in the market."
+  },
+  {
+    icon: <Code size={28} />,
+    title: "Software Development",
+    description: "Bespoke software solutions tailored to your unique business requirements and goals."
+  },
+  {
+    icon: <Share2 size={28} />,
+    title: "Social Media Marketing (SMM)",
+    description: "Engaging your audience across social platforms to build brand loyalty and community."
+  },
+  {
+    icon: <Smartphone size={28} />,
+    title: "Mobile App Development",
+    description: "Native and cross-platform mobile apps that provide a seamless user experience."
+  },
+  {
+    icon: <TrendingUp size={28} />,
+    title: "Google Ads Management",
+    description: "Optimizing your paid search campaigns to maximize ROI and reach your target audience effectively."
+  },
+  {
+    icon: <Palette size={28} />,
+    title: "Graphic & Logo Design",
+    description: "Professional visual designs and logos that communicate your brand's story effectively."
+  },
+  {
+    icon: <Briefcase size={28} />,
+    title: "B2B & SaaS Marketing",
+    description: "Tailored marketing strategies for B2B and SaaS businesses to drive lead generation and growth."
+  },
+  {
+    icon: <Globe size={28} />,
+    title: "WordPress Development",
+    description: "High-quality, customizable WordPress websites that are easy to manage and highly functional."
   }
 ];
 
@@ -40,7 +79,7 @@ export default function Services() {
     <section id="services" className="services-section section-padding">
       <div className="container">
         <div className="services-header animate-fade-in-up">
-          <h2>Our Expertise</h2>
+          <h2>Our Services</h2>
           <p>We provide a wide range of digital services to help your business thrive in the modern world.</p>
         </div>
         

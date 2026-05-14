@@ -4,6 +4,7 @@ import Home from './Home';
 import Products from './Products';
 import Academy from './Academy';
 import Career from './Career';
+import Contact from './Contact';
 import AdminPanel from './AdminPanel';
 import './index.css';
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/academy" element={<Academy />} />
           <Route path="/career" element={<Career />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/admin" element={<AdminPanel />} />
         </Routes>
       </div>
