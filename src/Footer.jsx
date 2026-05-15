@@ -33,11 +33,11 @@ export default function Footer() {
             <img src={logo} alt="Nubiluz Tech" className="footer-logo" />
             <p>Empowering businesses through innovative software and data-driven digital strategies.</p>
             <div className="footer-social">
-              <Link to="/" className="social-icon"><Facebook size={20} /></Link>
-              <Link to="/" className="social-icon"><Twitter size={20} /></Link>
-              <Link to="/" className="social-icon"><Instagram size={20} /></Link>
-              <Link to="/" className="social-icon"><Linkedin size={20} /></Link>
-              <Link to="/" className="social-icon"><Github size={20} /></Link>
+              <a href="https://www.facebook.com/profile.php?id=61589956101319" target="_blank" rel="noopener noreferrer" className="social-icon"><Facebook size={20} /></a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon"><Twitter size={20} /></a>
+              <a href="https://www.instagram.com/nubiluz_tech/" target="_blank" rel="noopener noreferrer" className="social-icon"><Instagram size={20} /></a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon"><Linkedin size={20} /></a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-icon"><Github size={20} /></a>
             </div>
           </div>
           

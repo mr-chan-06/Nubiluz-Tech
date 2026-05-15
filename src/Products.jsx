@@ -48,6 +48,10 @@ export default function Products() {
               <div className="service-icon"><Code size={32} /></div>
               <h3>Custom Web Development</h3>
               <p>We create modern, responsive, and high-performance websites tailored to your business goals. From corporate websites to advanced web applications, our solutions are designed for speed, security, and scalability.</p>
+              <div className="glassy-overlay">
+                <span>Scalable architecture built for performance.</span>
+                <span>SEO optimized and conversion-ready.</span>
+              </div>
               <ul className="feature-list">
                 <li><CheckCircle size={16} /> Responsive UI/UX Design</li>
                 <li><CheckCircle size={16} /> SEO-Friendly Architecture</li>
@@ -63,6 +67,10 @@ export default function Products() {
               <div className="service-icon"><Smartphone size={32} /></div>
               <h3>Mobile App Development</h3>
               <p>Transform your ideas into powerful mobile applications for Android and iOS platforms with seamless performance and user-friendly experiences.</p>
+              <div className="glassy-overlay">
+                <span>Smooth UX for Android and iOS.</span>
+                <span>Highly responsive and feature-rich.</span>
+              </div>
               <ul className="feature-list">
                 <li><CheckCircle size={16} /> Native & Hybrid Apps</li>
                 <li><CheckCircle size={16} /> E-Commerce Applications</li>
@@ -77,6 +85,10 @@ export default function Products() {
               <div className="service-icon"><Database size={32} /></div>
               <h3>ERP & CRM Solutions</h3>
               <p>Streamline operations, manage customers efficiently, and improve productivity with intelligent ERP and CRM systems customized for your business workflows.</p>
+              <div className="glassy-overlay">
+                <span>Streamline your business workflows.</span>
+                <span>Centralized data for better decisions.</span>
+              </div>
               <ul className="feature-list">
                 <li><CheckCircle size={16} /> Centralized Data Management</li>
                 <li><CheckCircle size={16} /> Sales & Lead Tracking</li>
@@ -91,6 +103,10 @@ export default function Products() {
               <div className="service-icon"><ShoppingCart size={32} /></div>
               <h3>E-Commerce Development</h3>
               <p>Launch feature-rich online stores with secure payment gateways, product management systems, and optimized shopping experiences.</p>
+              <div className="glassy-overlay">
+                <span>Convert visitors into loyal customers.</span>
+                <span>Secure payments and easy management.</span>
+              </div>
               <ul className="feature-list">
                 <li><CheckCircle size={16} /> Multi-Vendor Platforms</li>
                 <li><CheckCircle size={16} /> Inventory Management</li>
@@ -117,6 +133,10 @@ export default function Products() {
               <div className="service-icon"><Search size={32} /></div>
               <h3>Search Engine Optimization (SEO)</h3>
               <p>Increase your online visibility and rank higher on search engines with data-driven SEO strategies designed for long-term growth.</p>
+              <div className="glassy-overlay">
+                <span>Rank higher on Google search results.</span>
+                <span>Drive organic traffic to your site.</span>
+              </div>
               <ul className="feature-list">
                 <li><CheckCircle size={16} /> Keyword Research</li>
                 <li><CheckCircle size={16} /> On-Page SEO</li>
@@ -132,6 +152,10 @@ export default function Products() {
               <div className="service-icon"><Share2 size={32} /></div>
               <h3>Social Media Marketing</h3>
               <p>Build brand awareness and engage your audience through impactful social media campaigns across major platforms.</p>
+              <div className="glassy-overlay">
+                <span>Engage your audience effectively.</span>
+                <span>Build a strong brand presence online.</span>
+              </div>
               <ul className="feature-list">
                 <li><CheckCircle size={16} /> Facebook Marketing</li>
                 <li><CheckCircle size={16} /> Instagram Promotions</li>
@@ -145,6 +169,10 @@ export default function Products() {
               <div className="service-icon"><Target size={32} /></div>
               <h3>Performance Marketing</h3>
               <p>Generate quality leads and maximize ROI with targeted paid advertising campaigns.</p>
+              <div className="glassy-overlay">
+                <span>Maximize ROI with targeted ads.</span>
+                <span>Generate high-quality business leads.</span>
+              </div>
               <ul className="feature-list">
                 <li><CheckCircle size={16} /> Google Ads</li>
                 <li><CheckCircle size={16} /> Meta Ads</li>
@@ -159,6 +187,10 @@ export default function Products() {
               <div className="service-icon"><Palette size={32} /></div>
               <h3>Branding & Creative Design</h3>
               <p>Create a strong and memorable brand identity that connects with your audience.</p>
+              <div className="glassy-overlay">
+                <span>Stunning visuals that tell your story.</span>
+                <span>Unique identity for your brand.</span>
+              </div>
               <ul className="feature-list">
                 <li><CheckCircle size={16} /> Logo Design</li>
                 <li><CheckCircle size={16} /> Brand Identity Kits</li>

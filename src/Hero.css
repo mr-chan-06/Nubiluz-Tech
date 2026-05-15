@@ -49,6 +49,15 @@
   to { transform: scale(1.2); opacity: 0.1; }
 }
 
+.hero-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 4rem;
+  position: relative;
+  z-index: 10;
+}
+
 .hero-content {
   flex: 1;
   max-width: 700px;
@@ -95,49 +104,130 @@
   align-items: center;
   position: relative;
   z-index: 1;
+  padding: 2rem;
 }
 
-.hero-image-container {
+.hero-interactive-container {
   position: relative;
   width: 100%;
   max-width: 600px;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
-.hero-image {
+.main-visual-hub {
+  position: relative;
+  width: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transform: translateZ(0);
+}
+
+.hero-image-v2 {
   width: 100%;
   height: auto;
-  border-radius: 24px;
-  box-shadow: var(--shadow-xl);
-  transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
-  transition: var(--transition-slow);
+  display: block;
+  filter: brightness(0.9) contrast(1.1);
+  transition: filter 0.3s ease;
 }
 
-.hero-image:hover {
-  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+.hub-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, transparent 100%);
+  mix-blend-mode: overlay;
 }
+
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--primary), transparent);
+  opacity: 0.5;
+  animation: scan 4s linear infinite;
+}
+
+@keyframes scan {
+  from { top: -10%; }
+  to { top: 110%; }
+}
+
+.parallax-icon {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.p1 { top: 5%; left: -8%; }
+.p2 { top: -12%; right: 5%; }
+.p3 { bottom: 15%; left: -12%; }
+.p4 { bottom: -8%; right: -2%; }
 
 .floating-card {
   position: absolute;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1rem 1.5rem;
   border-radius: 20px;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   display: flex;
   align-items: center;
   gap: 1rem;
-  z-index: 3;
-  animation: float 6s ease-in-out infinite;
+  z-index: 10;
 }
 
-.card-1 { top: 10%; right: -5%; animation-delay: 0s; }
+.card-1 { top: 15%; right: -15%; }
 
+.card-icon-wrapper {
+  background: #dcfce7;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-val {
+  font-weight: 800;
+  font-size: 1rem;
+  margin: 0;
+  color: #1e293b;
+}
+
+.card-label {
+  color: #64748b;
+  font-size: 0.75rem;
+  margin: 0;
+  font-weight: 500;
+}
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  50% { transform: translateY(-15px); }
 }
 
 @media (max-width: 1024px) {
@@ -148,8 +238,13 @@
     padding-bottom: 60px;
   }
   
+  .hero-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
   .hero-content {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -164,11 +259,29 @@
     justify-content: center;
   }
   
-  .hero-image {
-    transform: none;
+  .hero-visual {
+    padding: 1rem;
+    width: 100%;
   }
-  
-  .hero-image:hover {
-    transform: none;
+
+  .hero-interactive-container {
+    transform: none !important;
+    max-width: 500px;
+  }
+
+  .parallax-icon {
+    display: none;
+  }
+
+  .card-1 {
+    right: 5%;
+    top: auto;
+    bottom: -20px;
+    transform: none !important;
+    padding: 0.75rem 1rem;
+  }
+
+  .main-visual-hub {
+    border-radius: 20px;
   }
 }

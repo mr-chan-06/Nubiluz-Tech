@@ -465,17 +465,17 @@ export default function AdminPanel() {
                                 </div>
                                 {candidates.map(candidate => (
                                     <div key={candidate.id} className="table-row">
-                                        <div className="cell">{candidate.name}</div>
-                                        <div className="cell">{candidate.email}</div>
-                                        <div className="cell">{candidate.phone}</div>
-                                        <div className="cell">{candidate.position}</div>
-                                        <div className="cell">{candidate.appliedAt}</div>
-                                        <div className="cell">
+                                        <div className="cell" data-label="Name">{candidate.name}</div>
+                                        <div className="cell" data-label="Email">{candidate.email}</div>
+                                        <div className="cell" data-label="Phone">{candidate.phone}</div>
+                                        <div className="cell" data-label="Position">{candidate.position}</div>
+                                        <div className="cell" data-label="Applied At">{candidate.appliedAt}</div>
+                                        <div className="cell" data-label="Resume">
                                             <a href={candidate.resume} target="_blank" rel="noopener noreferrer" className="resume-link">
                                                 View
                                             </a>
                                         </div>
-                                        <div className="cell">
+                                        <div className="cell" data-label="Action">
                                             <button
                                                 className="delete-btn-small"
                                                 onClick={() => handleDeleteCandidate(candidate.id)}
@@ -572,13 +572,13 @@ export default function AdminPanel() {
                                 </div>
                                 {academyLeads.map(lead => (
                                     <div key={lead.id} className="table-row">
-                                        <div className="cell">{lead.name}</div>
-                                        <div className="cell">{lead.email}</div>
-                                        <div className="cell">{lead.phone}</div>
-                                        <div className="cell">{lead.course}</div>
-                                        <div className="cell">{lead.qualification}</div>
-                                        <div className="cell">{lead.appliedAt}</div>
-                                        <div className="cell">
+                                        <div className="cell" data-label="Name">{lead.name}</div>
+                                        <div className="cell" data-label="Email">{lead.email}</div>
+                                        <div className="cell" data-label="Phone">{lead.phone}</div>
+                                        <div className="cell" data-label="Course">{lead.course}</div>
+                                        <div className="cell" data-label="Qualification">{lead.qualification}</div>
+                                        <div className="cell" data-label="Applied At">{lead.appliedAt}</div>
+                                        <div className="cell" data-label="Action">
                                             <button
                                                 className="delete-btn-small"
                                                 onClick={() => handleDeleteAcademyLead(lead.id)}

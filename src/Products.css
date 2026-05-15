@@ -73,12 +73,62 @@
   transition: var(--transition-slow);
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
 }
 
 .service-card:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-xl);
   border-color: rgba(37, 99, 235, 0.2);
+}
+
+.glassy-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  width: 85%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 6px;
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+  z-index: 20;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover .glassy-overlay {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%);
+}
+
+.glassy-overlay span {
+  display: block;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.glassy-overlay span:first-child {
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+.glassy-overlay span:last-child {
+  color: var(--text-main);
+  font-size: 0.8rem;
+  opacity: 0.9;
 }
 
 .service-icon {
